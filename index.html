@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="./Assets/style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-times" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <hi>Hi, I'm <span>Shadrack</span><br>Gathuru</hi>
+            </div>
+        </div>
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Assets/Images/Shadd.jpg">
+                </div>
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2015 - 2017</span><br>Diploma in Business Information Technology at Zetech University</li>
+                        <li><span>2018 - 2019</span><br>Ineternship at Brookside Dairy Limited.</li>
+                        <li><span>2019-2022</span><br>IT System Administrator</li>
+                        <li><span>2024 - Current</span><br>Web Development Training at DTTP</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2017</span><br>Diploma in Business Information Technology at Zetech University</li>
+                        <li><span>2024</span><br>Web Development Training at DTTP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- portfolio -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="Assets/Images/pexels-format-1029757.jpg">
+                    <div class="layer">
+                        <h3>First Website</h3>
+                        <p>This is my first html website</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Assets/Images/pexels-format-1029757 (1).jpg">
+                    <div class="layer">
+                        <h3>Updated Bio Page</h3>
+                        <p>The bio page has added CSS code for better styling with a functioning contact us form</p>
+                        <a href="#"><i class="fa fa-external-link-alt"></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+    <!-- contact-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> shadrackmwangi6@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> +1(437)566-6962</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+    
+                        <input type="hidden" name="apikey" value="e71729db-1eb6-490f-b102-95e4cd342f59">
+                
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name"><br><br>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message"></textarea><br><br>
+                        
+                        <input type="submit" value="Send">
+                    </form>
+                     <!-- Success and Error Messages -->
+                
+                     <div id="successMessage" style="display: none; color: green;">
+                        Your message has been sent successfully.
+                    </div>
+                
+                    <div id="errorMessage" style="display: none; color: red;">
+                        Oops! There was an error. Please try again later.
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+</body>
+</html>
